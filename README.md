@@ -1,4 +1,4 @@
 # WaveProgressDemo
 
-Modified from [WaveProgress](https://github.com/AMORICHIKA/WaveProgress.git)
-<video src="./screenrecord.mp4" />
+Modified from [WaveProgress](https://github.com/AMORICHIKA/WaveProgress.git)  
+Screenrecord Video: [screenrecord.mp4](./screenrecord.mp4)
