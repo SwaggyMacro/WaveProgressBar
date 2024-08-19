@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="WaveProgressDemo.WaveProgress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse x:Name="CircleBorder" Stroke="{Binding WaveBorderBrush, RelativeSource={RelativeSource AncestorType=UserControl}}" StrokeThickness="3" Grid.Column="0" Grid.Row="0" Margin="-5"/>
+        <Ellipse x:Name="ellipse" Fill="{Binding WaveColorBrush, RelativeSource={RelativeSource AncestorType=UserControl}}" Grid.Column="0" Grid.Row="0">
+            <Ellipse.OpacityMask>
+                <VisualBrush Visual="{Binding Path=WaveDraw, RelativeSource={RelativeSource AncestorType=UserControl}}" TileMode="Tile" Viewport="0,-1,1,3" Stretch="Fill" >
+                    <VisualBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="{Binding Path=Filling, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        </TransformGroup>
+                    </VisualBrush.RelativeTransform>
+                </VisualBrush>
+            </Ellipse.OpacityMask>
+        </Ellipse>
+        <Ellipse x:Name="ellipse2" Fill="{Binding WaveColorFillBrush, RelativeSource={RelativeSource AncestorType=UserControl}}" Grid.Column="0" Grid.Row="0" Margin="0">
+            <Ellipse.OpacityMask>
+                <VisualBrush Visual="{Binding Path=WaveDraw, RelativeSource={RelativeSource AncestorType=UserControl}}" TileMode="Tile" Viewport="0,-1,1,3" Stretch="Fill">
+                    <VisualBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="{Binding Path=Filling, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                        </TransformGroup>
+                    </VisualBrush.RelativeTransform>
+                </VisualBrush>
+            </Ellipse.OpacityMask>
+        </Ellipse>
+        <TextBlock Foreground="{Binding FontBrush, RelativeSource={RelativeSource AncestorType=UserControl}}"
+               FontSize="36"
+               FontWeight="SemiBold"
+               TextAlignment="Right"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Stretch">
+
+            <TextBlock Text="{Binding Progress, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+            <TextBlock Text="%" FontSize="22"/>
+        </TextBlock>
+    </Grid>
+</UserControl>

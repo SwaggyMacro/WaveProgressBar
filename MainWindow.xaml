@@ -1,0 +1,35 @@
+﻿<Window x:Class="WaveProgressDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaveProgressDemo"
+        d:DataContext="{d:DesignInstance local:MainWindow}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="5">
+            <Button Content="Random" Click="ButtonBase_OnClick" Width="100" Height="50" Margin="5"/>
+            <WrapPanel x:Name="Wrap" ItemWidth="100" ItemHeight="100">
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+                <local:WaveProgress Margin="5" Progress="{Binding Progress}"/>
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>
